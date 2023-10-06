@@ -3,15 +3,17 @@ import { bookCtrl } from '../controllers/book.controller.js';
 import { authorCtrl } from '../controllers/author.controller.js';
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Servidor funcionando correctamente!');
+
+
+//vistas
+
+router.get('/',(req,res)=>{
+    res.render('index')
 });
 
 
 
-
-
-//apis
+//APIS
 
 //Author
 router.post('/api/author/create', authorCtrl.create);

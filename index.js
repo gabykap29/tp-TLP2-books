@@ -14,7 +14,10 @@ const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(router);
+app.set('views',path.join(process.cwd(), 'src','views'));
+app.set('view engine','ejs');
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(process.cwd(), 'public')));
 //fileUpload 
 app.use(fileUpload({
     limits: { fileSize: 50 * 1024 * 1024 },
